@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "RobotoMono";
+  src: url(/assets/font/RobotoMono-Bold.ttf) format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "RobotoMono";
+  src: url(/assets/font/RobotoMono-Regular.ttf) format("truetype");
+  font-weight: normal;
+}
+
+body {
+  background-color: #ff6832;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: RobotoMono, sans-serif;
+  min-height: 100vh;
+}
+
+.box {
+  width: 300px;
+  height: 400px;
+  border-radius: 20px;
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.text-normal {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 10px;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.text-bold {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.highlight {
+  background-color: yellow;
+  color: black;
+  padding: 2px 4px;
+}
+
+.line-black {
+  padding: 1.2px 5px;
+  margin: 92px 80px 0px;
+  background-color: black;
+  display: flex;
+  position: relative;
+  z-index: 10;
+}
+
+.tickets-container {
+  position: absolute;
+  top: 180px;
+  left: 0;
+  right: 0;
+  height: 260px;
+  overflow: hidden;
+}
+
+@keyframes Roll {
+  0% {
+    transform: translateY(-404px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.ticket-roll {
+  position: absolute;
+  top: 0;
+  left: 82px;
+  right: 82px;
+  animation: Roll 8s linear infinite;
+}
+
+.ticket-strip {
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-item {
+  padding: 100px 5px;
+  background-color: #f1f1ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  height: 101px;
+  border-bottom: 2px dashed #d5d5d3;
+}
+
+.ticket-item {
+  border-radius: 12px;
+}
+
+.ticket-item .line-gray {
+  padding: 1px 34px;
+  margin: 7px 79px 0px;
+  background-color: #9a9a98;
+  display: flex;
+}
+
+.ticket-item::before,
+.ticket-item::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  top: 89px;
+  z-index: 1;
+}
+
+.ticket-item::before {
+  left: -15px;
+}
+
+.ticket-item::after {
+  right: -15px;
+}
